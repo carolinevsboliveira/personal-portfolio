@@ -1,4 +1,3 @@
-import Link from "next/link";
 import "./globals.scss";
 import { Inter } from "next/font/google";
 import { Navbar } from "~/components/navbar/navbar";
@@ -18,6 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        {/* @ts-expect-error Async Server Component */}
         <Navbar />
         {children}
       </body>

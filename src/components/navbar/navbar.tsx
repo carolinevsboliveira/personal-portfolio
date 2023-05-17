@@ -1,16 +1,28 @@
+import { client } from "~/helpers/requests/default-request-config";
 import { ClickableLinks } from "./clicable-navbar";
+import { NavbarResponse } from "./entities";
 
-export async function Navbar() {
-  const jokes = await fetch("https://api.api-ninjas.com/v1/dadjokes?limit=3", {
-    headers: { "x-api-key": "" },
+export const fetchNavbarProps = async () => {
+  const result = await client.get<NavbarResponse>("api/homes", {
+    params: {
+      populate: {
+        navbar: {
+          populate: "*",
+        },
+      },
+    },
   });
 
-  const jsonJokes = await jokes.json();
-  console.log("🚀 ~ file: navbar.tsx:9 ~ Navbar ~ jsonJokes:", jsonJokes);
+  return result.data.data[0].attributes;
+};
+
+export async function Navbar() {
+  const navProps = await fetchNavbarProps();
+
   return (
     <>
-      {jsonJokes.map((joke, index) => (
-        <ClickableLinks linkName={joke.joke.split("")[1]} key={index} />
+      {navProps.navbar.navItems.map(({ title, id, link }) => (
+        <ClickableLinks linkName={title} href={link ?? "#"} key={id} />
       ))}
     </>
   );
