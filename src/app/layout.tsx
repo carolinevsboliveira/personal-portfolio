@@ -1,4 +1,4 @@
-import "./globals.scss";
+import "./globals.modules.scss";
 import { Inter } from "next/font/google";
 import { Navbar } from "~/components/navbar/navbar";
 

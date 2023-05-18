@@ -1,3 +1,7 @@
 export default function Home() {
-  return <main>Ah</main>;
+  return (
+    <main style={{ backgroundColor: "red", height: "5000px" }}>
+      BBBBBBBBBBBBBB
+    </main>
+  );
 }
