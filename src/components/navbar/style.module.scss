@@ -1,10 +1,87 @@
-.header {
-  position: fixed;
-  top: 0;
+@import "../styles/shared-styles.scss";
+
+.navbar {
   display: flex;
-  z-index: 9;
   align-items: center;
-  background-color: pink;
-  width: 100%;
+  justify-content: space-between;
   height: 5rem;
+  width: 100%;
+  padding: 1rem 3rem;
+  background-color: teal;
+  color: #fff;
+  top: 0;
+  position: fixed;
+
+  .logo {
+    font-size: 32px;
+  }
+
+  .hamburger {
+    display: none;
+    font-size: 24px;
+    user-select: none;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 1rem;
+    padding: 1rem;
+
+    li {
+      a {
+        color: #fff;
+        text-decoration: none;
+        position: relative;
+        @include underlined-effect;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+
+    .hamburger {
+      display: block;
+    }
+
+    #menu {
+      display: none;
+    }
+
+    #checkbox_toggle:checked ~ #menu {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      width: 100%;
+      justify-content: center;
+      left: 0;
+      right: 0;
+      background-color: teal;
+      background: pink;
+      padding: 1rem;
+      gap: 1rem;
+      li {
+        margin-bottom: 1rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  #checkbox_toggle:checked ~ .hamburger {
+    transform: rotate(45deg);
+    transition: transform 0.3s;
+  }
+
+  #checkbox_toggle:not(checked) ~ .hamburger {
+    transform: rotate(0deg);
+    transition: transform 0.3s;
+  }
 }
