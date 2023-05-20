@@ -1,8 +1,11 @@
 import "./globals.modules.scss";
-import { Inter } from "next/font/google";
+import { Roboto } from "next/font/google";
 import { Navbar } from "~/components/navbar/navbar";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -16,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={roboto.className}>
         {/* @ts-expect-error Async Server Component */}
         <Navbar />
         {children}
