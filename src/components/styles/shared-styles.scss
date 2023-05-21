@@ -18,3 +18,7 @@
     transform: scaleX(1);
   }
 }
+
+@mixin uppercase {
+  text-transform: uppercase;
+}
