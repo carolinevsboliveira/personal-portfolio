@@ -1,4 +1,5 @@
 @import "../styles/shared-styles.scss";
+@import "../styles/variables.scss";
 
 .navbar {
   display: flex;
@@ -7,10 +8,12 @@
   height: 5rem;
   width: 100%;
   padding: 1rem 3rem;
-  background-color: teal;
-  color: #fff;
+  background-color: $neutral;
+  color: $primary-high;
   top: 0;
   position: fixed;
+
+  @include default-box-shadow;
 
   .logo {
     font-size: 32px;
@@ -22,6 +25,10 @@
     user-select: none;
   }
 
+  .divisor {
+    display: none;
+  }
+
   .nav-links {
     display: flex;
     align-items: center;
@@ -31,7 +38,6 @@
 
     li {
       a {
-        color: #fff;
         text-decoration: none;
         position: relative;
         @include uppercase;
@@ -62,10 +68,12 @@
       justify-content: center;
       left: 0;
       right: 0;
-      background-color: teal;
-      background: pink;
+      background: $neutral;
       padding: 1rem;
       gap: 1rem;
+
+      @include default-box-shadow;
+
     }
   }
 
@@ -77,5 +85,11 @@
   #checkbox_toggle:not(checked) ~ .hamburger {
     transform: rotate(0deg);
     transition: transform 0.3s;
+  }
+
+  #checkbox_toggle:checked ~ .divisor {
+    display: inline-block;
+    width: 100%;
+    @include divisor;
   }
 }

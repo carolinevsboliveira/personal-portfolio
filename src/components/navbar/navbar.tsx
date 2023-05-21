@@ -40,8 +40,9 @@ export async function Navbar() {
     //     </ul>
     //   </nav>
     // </div>
-    <nav className={style["navbar"]}>
-      <div className={style["logo"]}>MUO</div>
+    <nav style={{display: 'flex', flexDirection: 'column'}}>
+     <div className={style["navbar"]}>
+     <div className={style["logo"]}>MUO</div>
       <input
         type="checkbox"
         id={style["checkbox_toggle"]}
@@ -50,6 +51,7 @@ export async function Navbar() {
       <label htmlFor={style["checkbox_toggle"]} className={style["hamburger"]}>
         <Icon use="plusSquare" />
       </label>
+      <hr className={style["divisor"]}/>
       <ul className={style["nav-links"]} id={style["menu"]}>
         {navProps.map(({ title, id, link }) => (
           <li key={id}>
@@ -57,6 +59,7 @@ export async function Navbar() {
           </li>
         ))}
       </ul>
+     </div>
     </nav>
   );
 }
