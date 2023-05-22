@@ -22,23 +22,8 @@ export async function Navbar() {
   const navProps = await fetchNavbarProps();
 
   return (
-    // <div className={style["header"]}>
-    //   <nav>
-    //     <ul>
-    //       <li>
-    //         {/* {navProps.navbar.navItems.map(({ title, id, link }) => (
-    //           <ClickableLinks linkName={title} href={link ?? "#"} key={id} />
-    //         ))} */}
-    //         {navProps.map(({ title, id, link }) => (
-    //           <ClickableLinks linkName={title} href={link ?? "#"} key={id} />
-    //         ))}
-    //       </li>
-    //     </ul>
-    //   </nav>
-    // </div>
-
     <nav className={style["navbar"]}>
-      <div className={style["logo"]}>MUO</div>
+      <div className={style["logo"]}>CAROLEZ</div>
       <input
         type="checkbox"
         id={style["checkbox_toggle"]}
@@ -50,7 +35,7 @@ export async function Navbar() {
       <ul className={style["nav-links"]} id={style["menu"]}>
         {navProps.navbar.navItems.map(({ title, id, link }) => (
           <li key={id}>
-            <ClickableLinks linkName={title} href={link ?? "#"} key={id} />
+            <ClickableLinks linkName={title} href={link ?? "/"} key={id} />
           </li>
         ))}
       </ul>

@@ -2,6 +2,8 @@
 
 import type { LinkProps } from "next/link";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import styles from "./style.module.scss";
 
 interface ClickableLinksProps extends LinkProps {
   linkName: string;
@@ -13,9 +15,16 @@ export function ClickableLinks({
   href,
   ...restProps
 }: ClickableLinksProps) {
+  const currentPath = usePathname();
   return (
-    <Link href={href} {...restProps}>
-      {linkName}
-    </Link>
+    <>
+      <Link
+        href={href}
+        {...restProps}
+        className={currentPath === href ? styles["active-link"] : ""}
+      >
+        {linkName}
+      </Link>
+    </>
   );
 }

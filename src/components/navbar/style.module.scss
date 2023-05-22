@@ -40,9 +40,9 @@
       a {
         text-decoration: none;
         position: relative;
-        color: $primary-high;
+        color: $secondary;
         @include uppercase;
-        @include underlined-effect;
+        @include underlined-transition;
       }
     }
   }
@@ -85,11 +85,5 @@
   #checkbox_toggle:not(checked) ~ .hamburger {
     transform: rotate(0deg);
     transition: transform 0.3s;
-  }
-
-  #checkbox_toggle:checked ~ .divisor {
-    display: inline-block;
-    width: 100%;
-    @include divisor;
   }
 }
