@@ -19,11 +19,7 @@ export const fetchNavbarProps = async () => {
 };
 
 export async function Navbar() {
-  // const navProps = await fetchNavbarProps();
-  const navProps = [
-    { title: "ah", id: "1", link: "/" },
-    { title: "ah", id: "1", link: "/" },
-  ];
+  const navProps = await fetchNavbarProps();
 
   return (
     // <div className={style["header"]}>
@@ -40,9 +36,9 @@ export async function Navbar() {
     //     </ul>
     //   </nav>
     // </div>
-    <nav style={{display: 'flex', flexDirection: 'column'}}>
-     <div className={style["navbar"]}>
-     <div className={style["logo"]}>MUO</div>
+
+    <nav className={style["navbar"]}>
+      <div className={style["logo"]}>MUO</div>
       <input
         type="checkbox"
         id={style["checkbox_toggle"]}
@@ -51,15 +47,13 @@ export async function Navbar() {
       <label htmlFor={style["checkbox_toggle"]} className={style["hamburger"]}>
         <Icon use="plusSquare" />
       </label>
-      <hr className={style["divisor"]}/>
       <ul className={style["nav-links"]} id={style["menu"]}>
-        {navProps.map(({ title, id, link }) => (
+        {navProps.navbar.navItems.map(({ title, id, link }) => (
           <li key={id}>
             <ClickableLinks linkName={title} href={link ?? "#"} key={id} />
           </li>
         ))}
       </ul>
-     </div>
     </nav>
   );
 }

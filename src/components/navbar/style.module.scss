@@ -40,6 +40,7 @@
       a {
         text-decoration: none;
         position: relative;
+        color: $primary-high;
         @include uppercase;
         @include underlined-effect;
       }
@@ -68,12 +69,11 @@
       justify-content: center;
       left: 0;
       right: 0;
-      background: $neutral;
+      background-color: $neutral-high;
       padding: 1rem;
       gap: 1rem;
 
       @include default-box-shadow;
-
     }
   }
 
