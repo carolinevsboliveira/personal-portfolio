@@ -1,6 +1,8 @@
-import "./globals.modules.scss";
 import { Roboto } from "next/font/google";
-import { Navbar } from "~/components/navbar/navbar";
+
+import "./globals.modules.scss";
+
+import { Navbar } from "~/components/ui/navbar/navbar";
 
 const roboto = Roboto({
   weight: "400",

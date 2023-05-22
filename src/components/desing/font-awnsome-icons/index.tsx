@@ -1,12 +1,16 @@
 "use client";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlusSquare } from "@fortawesome/free-regular-svg-icons";
+import type { ListedIcons } from "../../entities/icons";
 
-const IconsMap = {
-  plusSquare: <FontAwesomeIcon icon={faPlusSquare} />,
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus, faHome } from "@fortawesome/free-solid-svg-icons";
+
+const IconsMap: Record<ListedIcons, JSX.Element> = {
+  home: <FontAwesomeIcon icon={faHome} />,
+  plus: <FontAwesomeIcon icon={faPlus} />,
 };
 
-export const Icon = ({ use }: { use: keyof typeof IconsMap }) => {
+export const Icon = ({ use }: { use?: keyof typeof IconsMap }) => {
+  if (!use) return null;
   return IconsMap[use];
 };

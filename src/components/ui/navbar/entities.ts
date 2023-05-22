@@ -1,3 +1,5 @@
+import type { ListedIcons } from "../../entities/icons";
+
 type NavbarDataAttributes = {
   id: number;
   attributes: {
@@ -18,7 +20,7 @@ type NavbarDataAttributes = {
         title: string;
         path: string | null;
         link: string | null;
-        fontAwsomeKey: string | null;
+        fontAwsomeKey?: ListedIcons;
       }>;
     };
   };
