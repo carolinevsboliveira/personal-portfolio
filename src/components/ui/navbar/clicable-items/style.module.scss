@@ -1,6 +1,16 @@
 @import "../../../styles/shared-styles.scss";
 @import "../../../styles/variables.scss";
 
+.link {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
 .active-link {
   color: $primary-high !important;
 }

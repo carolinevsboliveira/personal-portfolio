@@ -1,1 +1,1 @@
-export type ListedIcons = "home" | "plus";
+export type ListedIcons = "home" | "plus" | "person" | "blog" | "phone";

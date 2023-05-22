@@ -30,7 +30,7 @@ export async function Navbar() {
         style={{ display: "none" }}
       />
       <label htmlFor={style["checkbox_toggle"]} className={style["hamburger"]}>
-        <Icon use="plus" />
+        <Icon use="plus" size="1x" />
       </label>
       <ul className={style["nav-links"]} id={style["menu"]}>
         {navProps.navbar.navItems.map(({ title, id, link, fontAwsomeKey }) => (
