@@ -46,7 +46,9 @@
       }
     }
   }
-
+  #checkbox_toggle {
+    display: none;
+  }
   @media (max-width: 768px) {
     .nav-links {
       display: none;

@@ -1,5 +1,5 @@
 import { client } from "~/helpers/requests/client";
-import { ClickableLinks } from "./clicable-items";
+import { ClickableLinks } from "./clickable-items";
 import { NavbarResponse } from "./entities";
 import style from "./style.module.scss";
 import { Icon } from "../../desing/font-awnsome-icons";
@@ -24,11 +24,7 @@ export async function Navbar() {
   return (
     <nav className={style["navbar"]}>
       <div className={style["logo"]}>CAROLEZ</div>
-      <input
-        type="checkbox"
-        id={style["checkbox_toggle"]}
-        style={{ display: "none" }}
-      />
+      <input type="checkbox" id={style["checkbox_toggle"]} />
       <label htmlFor={style["checkbox_toggle"]} className={style["hamburger"]}>
         <Icon use="plus" size="1x" />
       </label>

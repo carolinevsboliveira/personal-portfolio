@@ -20,22 +20,17 @@ export function ClickableLinks({
   ...restProps
 }: ClickableLinksProps) {
   const currentPath = usePathname();
-  console.log("🚀 ~ file: index.tsx:23 ~ currentPath:", currentPath);
+  console.log("🚀 ~ file: index.tsx:23 ~ currentPath:", currentPath === href);
+
   return (
     <div className={styles["link"]}>
-      <Icon
-        use={fontAwsomeKey}
-        size="xs"
-        className={
-          currentPath !== href
-            ? `${styles["hidden"]} ${styles["active-link"]}`
-            : ""
-        }
-      />
+      {currentPath === href && (
+        <Icon use={fontAwsomeKey} size="xs" data-testid="active-icon" />
+      )}
       <Link
         href={href}
         {...restProps}
-        className={currentPath === href ? styles["active-link"] : ""}
+        className={currentPath === href ? styles["active-link-color"] : ""}
       >
         {linkName}
       </Link>
