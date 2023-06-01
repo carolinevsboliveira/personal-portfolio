@@ -1,0 +1,12 @@
+@import "../../../styles/shared-styles.scss";
+@import "../../../styles/variables.scss";
+
+.link {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.active-link-color {
+  color: $primary-high !important;
+}

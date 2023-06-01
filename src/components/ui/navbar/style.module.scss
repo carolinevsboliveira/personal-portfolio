@@ -1,0 +1,87 @@
+@import "../../styles/shared-styles.scss";
+@import "../../styles/variables.scss";
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 5rem;
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: $neutral;
+  color: $primary-high;
+  top: 0;
+  position: fixed;
+
+  @include default-box-shadow;
+
+  .hamburger {
+    display: none;
+    font-size: 24px;
+    user-select: none;
+  }
+
+  .divisor {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 1.5rem;
+    padding: 1rem;
+
+    li {
+      a {
+        text-decoration: none;
+        position: relative;
+        color: $secondary;
+        @include uppercase;
+        @include underlined-transition;
+      }
+    }
+  }
+  #checkbox_toggle {
+    display: none;
+  }
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+
+    .hamburger {
+      display: block;
+    }
+
+    #menu {
+      display: none;
+    }
+
+    #checkbox_toggle:checked ~ #menu {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      width: 100%;
+      justify-content: center;
+      left: 0;
+      right: 0;
+      background-color: $neutral-high;
+      padding: 1rem;
+      gap: 1rem;
+
+      @include default-box-shadow;
+    }
+  }
+
+  #checkbox_toggle:checked ~ .hamburger {
+    transform: rotate(45deg);
+    transition: transform 0.3s;
+  }
+
+  #checkbox_toggle:not(checked) ~ .hamburger {
+    transform: rotate(0deg);
+    transition: transform 0.3s;
+  }
+}
