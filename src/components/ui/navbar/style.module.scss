@@ -7,17 +7,13 @@
   justify-content: space-between;
   height: 5rem;
   width: 100%;
-  padding: 1rem 3rem;
+  padding: 1rem 2rem;
   background-color: $neutral;
   color: $primary-high;
   top: 0;
   position: fixed;
 
   @include default-box-shadow;
-
-  .logo {
-    font-size: 32px;
-  }
 
   .hamburger {
     display: none;

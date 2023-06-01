@@ -14,7 +14,18 @@ type NavbarDataAttributes = {
         faIcon: string | null;
         theme: string | null;
       };
-      logo: Array<any>;
+      logo: {
+        data: {
+          id: number;
+          attributes: {
+            name: string;
+            alternativeText: string | null;
+            caption: string | null;
+            url: string;
+          };
+        };
+      };
+
       navItems: Array<{
         id: number;
         title: string;

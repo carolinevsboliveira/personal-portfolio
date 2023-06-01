@@ -1,10 +1,10 @@
-import { Roboto } from "next/font/google";
+import { Rubik } from "next/font/google";
 
 import "./globals.modules.scss";
 
 import { Navbar } from "~/components/ui/navbar/navbar";
 
-const roboto = Roboto({
+const rubik = Rubik({
   weight: "400",
   subsets: ["latin"],
 });
@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={roboto.className}>
+      <body className={rubik.className}>
         {/* @ts-expect-error Async Server Component */}
         <Navbar />
         {children}
