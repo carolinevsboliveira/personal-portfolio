@@ -1,7 +1,10 @@
 {
-  "extends": "next/core-web-vitals", 
+  "extends":[ "next/core-web-vitals", "plugin:@typescript-eslint/recommended"], 
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
   "rules": {
     "no-console":"error", 
-    "no-inline-comments": "error"
+    "no-inline-comments": "error", 
+    "@typescript-eslint/consistent-type-imports": "error"
   }
 }
