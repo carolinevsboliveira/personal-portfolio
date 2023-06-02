@@ -12,6 +12,8 @@ import {
   faUser,
   faMugSaucer,
   faPhone,
+  faHandSparkles,
+  faDownload,
 } from "@fortawesome/free-solid-svg-icons";
 
 const IconsMap: Record<ListedIcons, IconDefinition> = {
@@ -20,6 +22,8 @@ const IconsMap: Record<ListedIcons, IconDefinition> = {
   person: faUser,
   blog: faMugSaucer,
   phone: faPhone,
+  "hand-sparkle": faHandSparkles,
+  download: faDownload,
 };
 
 interface IconProps extends Omit<FontAwesomeIconProps, "icon"> {

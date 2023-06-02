@@ -1,7 +1,6 @@
+import { AboutMeSection } from "~/components/ui/about-me-section/about-me-section";
+
 export default function Home() {
-  return (
-    <main style={{ backgroundColor: "red", height: "5000px" }}>
-      BBBBBBBBBBBBBB
-    </main>
-  );
+  /* @ts-expect-error Async Server Component */
+  return <AboutMeSection />;
 }

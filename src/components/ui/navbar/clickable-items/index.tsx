@@ -20,7 +20,6 @@ export function ClickableLinks({
   ...restProps
 }: ClickableLinksProps) {
   const currentPath = usePathname();
-  console.log("🚀 ~ file: index.tsx:23 ~ currentPath:", currentPath === href);
 
   return (
     <div className={styles["link"]}>

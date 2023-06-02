@@ -1,25 +1,8 @@
-import type { NavbarResponse } from "./entities";
-
-import { client } from "~/helpers/requests/client";
 import { ClickableLinks } from "./clickable-items";
 import style from "./style.module.scss";
-
-import { Icon } from "../../desing/font-awnsome-icons";
 import Image from "next/image";
-
-export const fetchNavbarProps = async () => {
-  const result = await client.get<NavbarResponse>("api/homes", {
-    params: {
-      populate: {
-        navbar: {
-          populate: "*",
-        },
-      },
-    },
-  });
-
-  return result.data.data[0].attributes;
-};
+import { Icon } from "../../desing/font-awnsome-icons";
+import { fetchNavbarProps } from "~/helpers/requests/navbar";
 
 export async function Navbar() {
   const navProps = await fetchNavbarProps();
@@ -27,7 +10,7 @@ export async function Navbar() {
   return (
     <nav className={style["navbar"]}>
       <Image
-        src={`${process.env.BASE_ASSETS_API}${navProps.navbar.logo.data.attributes.url}`}
+        src={`${process.env.BASE_API_URL}${navProps.navbar.logo.data.attributes.url}`}
         width={90}
         height={90}
         alt={navProps.navbar.logo.data.attributes.alternativeText ?? "logo"}

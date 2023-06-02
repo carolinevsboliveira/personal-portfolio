@@ -1,0 +1,7 @@
+.main-information {
+  display: flex;
+  gap: 3rem;
+  .presentation-text {
+    flex-direction: column;
+  }
+}
