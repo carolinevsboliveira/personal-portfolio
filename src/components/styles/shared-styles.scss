@@ -20,7 +20,23 @@
     transform: scaleX(1);
   }
 }
+@mixin underlined-link {
+  background: linear-gradient(
+      to right,
+      rgba(100, 200, 200, 0),
+      rgba(100, 200, 200, 0)
+    ),
+    linear-gradient(to right, $primary, $secondary, $neutral-high);
+  background-size: 100% 0.1em, 0 0.1em;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
 
+  &:hover,
+  &:focus {
+    background-size: 0 0.1em, 100% 0.1em;
+  }
+}
 @mixin uppercase {
   text-transform: uppercase;
 }

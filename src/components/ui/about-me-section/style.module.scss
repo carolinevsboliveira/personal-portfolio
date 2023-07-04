@@ -1,7 +1,30 @@
+@import "../../styles/variables.scss";
+@import "../../styles/shared-styles.scss";
+
 .main-information {
   display: flex;
   gap: 3rem;
+  padding: 3rem;
+  background-color: $ultra-neutral;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
   .presentation-text {
     flex-direction: column;
+    width: 30%;
+    > h2 > span {
+      @include underlined-link;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .presentation-text {
+      flex-direction: column;
+      width: 80%;
+      > h2 {
+        font-size: medium;
+      }
+    }
   }
 }

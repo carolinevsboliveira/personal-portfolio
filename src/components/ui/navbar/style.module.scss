@@ -38,7 +38,7 @@
         position: relative;
         color: $secondary;
         @include uppercase;
-        @include underlined-transition;
+        @include underlined-link;
       }
     }
   }
